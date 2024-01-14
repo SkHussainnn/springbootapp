@@ -4,6 +4,7 @@ pipeline {
             label 'Jenkins-Slave-Node'
         }
     }
+    //env setup
     environment {
         PATH = "/opt/maven/bin:$PATH"
     }
