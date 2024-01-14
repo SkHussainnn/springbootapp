@@ -18,7 +18,7 @@ pipeline {
                 echo "Build completed" 
             }
         }
-        stage('SonarQube analysis') {
+        /*stage('SonarQube analysis') {
             environment {
                 scannerHome = tool 'Sonar-Scanner-meportal'
             }
@@ -42,6 +42,7 @@ pipeline {
         }
 
     }
-}
+}*/
+
 
 
