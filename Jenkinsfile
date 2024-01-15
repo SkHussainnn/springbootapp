@@ -15,7 +15,7 @@ pipeline {
                 script {
                     sh 'mvn clean deploy -Dmaven.test.skip=true'
                 }
-                echo "Build completed" 
+                echo "Build completed" //AVD GRP
             }
         }
         /*stage('SonarQube analysis') {
@@ -37,7 +37,7 @@ pipeline {
                             error "Pipeline aborted due to quality gate failure: ${qg.status}"
                         }
                     }
-                }
+                } //AVD GRP
             }
         }*/
         stage("Artifact Publish") {
@@ -85,8 +85,13 @@ pipeline {
                 }
             }
         }
+        stage ("Deploy Stage"){
+            steps {
+                script {
+                        sh './deploy.sh'
+                    }    
+                }
+            }
+        }
 
     }
-}
-
-
