@@ -15,7 +15,7 @@ pipeline {
                 script {
                     sh 'mvn clean deploy -Dmaven.test.skip=true'
                 }
-                echo "Build completed" //AVD GRP
+                echo "Build completed" 
             }
         }
         /*stage('SonarQube analysis') {
