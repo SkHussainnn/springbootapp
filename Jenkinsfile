@@ -85,13 +85,24 @@ pipeline {
                 }
             }
         }
-        stage ("Deploy Stage"){
+        /*stage ("Deploy Stage"){
             steps {
                 script {
-                        sh './deploy.sh'
+                        sh './deploy.sh'   //Hussainhbjhbjhb
                     }    
                 }
             }
-        }
+            
+        }*/
+        stage(" Deploy ") {
+       steps {
+         script {
+            echo '<--------------- Helm Deploy Started --------------->'
+            sh 'helm install meportal meportal-1.0.1.tgz'
+            echo '<--------------- Helm deploy Ends --------------->'
+         }
+       }
+     }
 
     }
+}
